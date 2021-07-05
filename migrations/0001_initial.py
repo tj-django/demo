@@ -14,11 +14,14 @@ class Migration(migrations.Migration):
             name="TestModel",
             fields=[
                 (
-                    models.AutoField(
-                        auto_created=True,
-                        primary_key=True,
-                        serialize=False,
-                        verbose_name="ID",
+                    (
+                        "id",
+                        models.AutoField(
+                            auto_created=True,
+                            primary_key=True,
+                            serialize=False,
+                            verbose_name="ID",
+                        ),
                     )
                     if django.VERSION < (3, 2)
                     else (
