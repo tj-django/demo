@@ -13,18 +13,23 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="TestModel",
             fields=[
-                migrations.AlterField(
-                    model_name='testmodel',
-                    name='id',
-                    field=models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
-                ) if django.VERSION < (3, 2) else (
-                    "id",
-                    models.BigAutoField(
+                (
+                    models.AutoField(
                         auto_created=True,
                         primary_key=True,
                         serialize=False,
                         verbose_name="ID",
-                    ),
+                    )
+                    if django.VERSION < (3, 2)
+                    else (
+                        "id",
+                        models.BigAutoField(
+                            auto_created=True,
+                            primary_key=True,
+                            serialize=False,
+                            verbose_name="ID",
+                        ),
+                    )
                 ),
                 ("created_at", models.DateTimeField(auto_now_add=True)),
                 ("update_at", models.DateTimeField(auto_now=True)),
