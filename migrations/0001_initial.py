@@ -38,7 +38,17 @@ class Migration(migrations.Migration):
                 ("update_at", models.DateTimeField(auto_now=True)),
                 ("name", models.CharField(max_length=500)),
                 ("age", models.PositiveIntegerField(default=50)),
-                ("active", models.BooleanField(null=True)),
+                (
+                    (
+                        "active",
+                        models.NullBooleanField(),
+                    )
+                    if django.VERSION < (3, 2)
+                    else (
+                        "active",
+                        models.BooleanField(null=True),
+                    )
+                ),
             ],
             options={
                 "verbose_name": "test model",
