@@ -43,7 +43,7 @@ class Migration(migrations.Migration):
                         "active",
                         models.NullBooleanField(),
                     )
-                    if django.VERSION < (3, 2)
+                    if django.VERSION < (2, 1)
                     else (
                         "active",
                         models.BooleanField(null=True),
