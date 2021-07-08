@@ -10,9 +10,9 @@ class TestModel(models.Model):
     age = models.PositiveIntegerField(default=500)
 
     if django.VERSION < (2, 1):
-        active = models.NullBooleanField()
+        active = models.NullBooleanField(default=True)
     else:
-        active = models.BooleanField(null=True)
+        active = models.BooleanField(default=True)
 
     class Meta:
         verbose_name = _("test model")
