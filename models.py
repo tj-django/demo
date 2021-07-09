@@ -11,7 +11,11 @@ class TestModel(models.Model):
     age = models.PositiveIntegerField(default=500)
 
     created_by = models.ForeignKey(
-        settings.AUTH_USER_MODEL, null=True, related_name="+", on_delete=models.CASCADE
+        settings.AUTH_USER_MODEL,
+        null=True,
+        related_name="+",
+        on_delete=models.CASCADE,
+        blank=True,
     )
     updated_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, null=True, related_name="+", on_delete=models.CASCADE
