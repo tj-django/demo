@@ -18,7 +18,11 @@ class TestModel(models.Model):
         blank=True,
     )
     updated_by = models.ForeignKey(
-        settings.AUTH_USER_MODEL, null=True, related_name="+", on_delete=models.CASCADE
+        settings.AUTH_USER_MODEL,
+        null=True,
+        related_name="+",
+        on_delete=models.CASCADE,
+        blank=True,
     )
 
     if django.VERSION < (2, 1):
