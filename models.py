@@ -10,8 +10,12 @@ class TestModel(models.Model):
     name = models.CharField(max_length=500)
     age = models.PositiveIntegerField(default=500)
 
-    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, related_name='+', on_delete=models.CASCADE)
-    updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, related_name='+', on_delete=models.CASCADE)
+    created_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, null=True, related_name="+", on_delete=models.CASCADE
+    )
+    updated_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, null=True, related_name="+", on_delete=models.CASCADE
+    )
 
     if django.VERSION < (2, 1):
         active = models.NullBooleanField()
