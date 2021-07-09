@@ -20,6 +20,7 @@ class Migration(migrations.Migration):
             name="updated_by",
             field=models.ForeignKey(
                 null=True,
+                blank=True,
                 on_delete=django.db.models.deletion.CASCADE,
                 related_name="+",
                 to=settings.AUTH_USER_MODEL,
@@ -30,6 +31,7 @@ class Migration(migrations.Migration):
             name="created_by",
             field=models.ForeignKey(
                 null=True,
+                blank=True,
                 on_delete=django.db.models.deletion.CASCADE,
                 related_name="+",
                 to=settings.AUTH_USER_MODEL,
