@@ -14,8 +14,6 @@ class TestModel(models.Model):
         active = models.NullBooleanField()
     else:
         active = models.BooleanField(null=True)
-        
-    
 
     class Meta:
         verbose_name = _("test model")
