@@ -7,7 +7,7 @@ class TestModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=500)
-    age = models.PositiveIntegerField(default=50)
+    age = models.PositiveIntegerField(default=500)
 
     if django.VERSION < (2, 1):
         active = models.NullBooleanField()
